@@ -1,15 +1,15 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-2:716657688884:task-definition/vproapp-act-tdef:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:520062632936:task-definition/vproapp-app-tdef:1",
     "containerDefinitions": [
         {
             "name": "vproapp",
-            "image": "716657688884.dkr.ecr.us-east-2.amazonaws.com/actapp",
+            "image": "520062632936.dkr.ecr.us-east-1.amazonaws.com/vprofileapp",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "vproapp-8080-tcp",
-                    "containerPort": 8080,
-                    "hostPort": 8080,
+                    "name": "vproapp-80-tcp",
+                    "containerPort": 80,
+                    "hostPort": 80,
                     "protocol": "tcp",
                     "appProtocol": "http"
                 }
@@ -24,16 +24,16 @@
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/vproapp-act-tdef",
-                    "awslogs-region": "us-east-2",
+                    "awslogs-group": "/ecs/vproapp-app-tdef",
+                    "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
                 },
                 "secretOptions": []
             }
         }
     ],
-    "family": "vproapp-act-tdef",
-    "executionRoleArn": "arn:aws:iam::716657688884:role/ecsTaskExecutionRole",
+    "family": "vproapp-app-tdef",
+    "executionRoleArn": "arn:aws:iam::520062632936:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "revision": 1,
     "volumes": [],
@@ -73,17 +73,12 @@
         "FARGATE"
     ],
     "cpu": "1024",
-    "memory": "2048",
+    "memory": "3072",
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-11-10T18:02:04.388Z",
-    "registeredBy": "arn:aws:iam::716657688884:root",
-    "tags": [
-        {
-            "key": "Name",
-            "value": "vproapp-act-tdef"
-        }
-    ]
-}
+    "registeredAt": "2023-12-03T00:17:29.750Z",
+    "registeredBy": "arn:aws:iam::520062632936:user/cloud_user",
+    "tags": []
+}r
